@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Student Registrationn</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    
+    <div class="container">
+        <div class="sidebar border-right">
+            <ul>
+                <li>
+                    <a asp-action="Login">Home</a>
+                </li>
+                <li>
+                    <a asp-action="StudentList">Student List</a>
+                </li>
+                <li>
+                    <a asp-action="Registration">Add New Student</a>
+                </li>
+            </ul>
+        </div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-center">
+        <div class="container">
+            Student Registration Application - 2021 &copy; - Sibli Rayhan
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

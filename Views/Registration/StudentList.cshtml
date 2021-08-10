@@ -1,0 +1,36 @@
+﻿@model IEnumerable<InterviewApplication.Models.RegistrationTable>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4">Registered Student List</h1>
+</div>
+<a class="btn btn-outline-primary" asp-action="Registration">New Registration</a>
+<table class="table table-borderless">
+    <tbody>
+        <tr>
+            <th>SL</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Date of Admission</th>
+            <th>Class</th>
+        </tr>
+        @foreach(var item in Model)
+            {
+    <tr>
+        <td>@item.id</td>
+        <td>@item.name</td>
+        <td>@item.address</td>
+        <td>@item.dateofadmission</td>
+        <td>@item.classname</td>
+        <td>
+            <div class="btn-group">
+                <a class="btn btn-outline-primary btn-group-lg" asp-action="UpdateData" asp-route-id="@item.id">Update</a>
+                <a class="btn btn-outline-danger btn-group-lg" asp-action="DeleteData" asp-route-id="@item.id">Delete</a>
+            </div>
+        </td>
+    </tr>
+            }
+        
+    </tbody>
+</table>
